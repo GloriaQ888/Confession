@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Our Love Story</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<style type="text/css">
+	*{
+		font-size:15px;
+		line-height:25px;
+	}
+</style>
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2016年11月18日</span><br />
+			<span class="space"/><span class="comments">*地点：天台</span><br />
+			<span class="space"/><span class="comments">**/</span><br />
+			Boy name = <span class="keyword">谢子然</span> <br />
+			Girl name = <span class="keyword">邱茵茵</span> <br />
+			<span class="comments">走在一起了 ！</span><br />
+			The boy 是一个外冷内热的嘻哈小王子;<br />
+			The girl 是一个外柔内刚的纯情小女生;<br />
+			<span class="comments">在他们的生活中</span><br />
+			有各种欢声笑语，也有各种吵吵闹闹。<br />
+			<span class="comments">在平平淡淡的日子里.</span><br />
+			<p>他们手牵手一起大碗喝酒，大口吃肉！后来走着走着，女孩差点把自己和男孩给弄丢了，不过所幸现在又捡回来了。女孩慢慢的找回自己最好的状态去迎接生活，继续拥抱那个善良又温情的男孩！当男孩每次主动牵起女孩的手的时候、当每次狠狠给女孩一个大大的吻的时候，当男孩每次怜惜的拨开女孩脸上的头发的时候，女孩心里都是暖暖的！女孩希望以后和男孩在一起，大家都可以展示自己真真实实的一面，用自己最放松的状态跟对方呆在一起。</p><br />
+			鸡鸡啊<br />
+			情人节快乐！<br />                    
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					七夕快乐！<br/>
+					<div class="signature">- 茵</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		<a href="#">....</a><br />
+		<a href="#">....</a><br />
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2016, 11, 18);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+console.log(document.createElement('canvas').getContext)
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
